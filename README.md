@@ -3,8 +3,7 @@
 A complete **Lambda Architecture** implementation for real-time Chicago crime data analytics, built with **Apache Spark**, **Apache Kafka**, **Apache Storm** (Python-based), **PostgreSQL**, **MongoDB**, and **Streamlit**.
 
 > **Course:** Big Data Analytics  
-> **Author:** Muhammad Ali (i220827)  
-> **University:** FAST NUCES, Islamabad
+> **Author:** Atif Ibrahim 
 
 ---
 
