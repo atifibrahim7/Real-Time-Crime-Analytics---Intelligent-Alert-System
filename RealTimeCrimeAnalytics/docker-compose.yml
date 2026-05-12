@@ -1,0 +1,138 @@
+networks:
+  lambda_net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  mongodb_data:
+
+services:
+  # 1. Infrastructure & Coordination
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    networks:
+      - lambda_net
+
+  kafka:
+    image: wurstmeister/kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "crime_events:1:1"
+    networks:
+      - lambda_net
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data
+    depends_on:
+      - zookeeper
+
+  # 2. The Speed Layer (Apache Storm)
+  nimbus:
+    image: storm:2.5.0
+    container_name: nimbus
+    command: storm nimbus
+    depends_on:
+      - zookeeper
+    networks:
+      - lambda_net
+    ports:
+      - "6627:6627"
+
+  supervisor:
+    image: storm:2.5.0
+    container_name: supervisor
+    command: storm supervisor
+    depends_on:
+      - nimbus
+      - zookeeper
+    networks:
+      - lambda_net
+
+  storm-ui:
+    image: storm:2.5.0
+    container_name: storm-ui
+    command: storm ui
+    depends_on:
+      - nimbus
+    networks:
+      - lambda_net
+    ports:
+      - "8080:8080"
+
+  # 3. The Batch Layer (Apache Spark)
+  spark-master:
+    image: apache/spark:3.5.3
+    container_name: spark-master
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --host spark-master
+    ports:
+      - "8081:8080"
+      - "7077:7077"
+    networks:
+      - lambda_net
+    volumes:
+      - ./data:/data
+      - ./spark:/spark
+
+  spark-worker:
+    image: apache/spark:3.5.3
+    container_name: spark-worker
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+    networks:
+      - lambda_net
+    volumes:
+      - ./data:/data
+      - ./spark:/spark
+    depends_on:
+      - spark-master
+
+  # 4. The Serving Layer (Databases)
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=crime_db
+    ports:
+      - "5432:5432"
+    networks:
+      - lambda_net
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - lambda_net
+    volumes:
+      - mongodb_data:/data/db
+
+  # 5. The Application Layer (Streamlit)
+  streamlit:
+    image: python:3.9-slim-buster
+    container_name: streamlit
+    working_dir: /app
+    # Using tail as a placeholder command until actual python code is written
+    command: tail -f /dev/null
+    volumes:
+      - ./app:/app
+    ports:
+      - "8501:8501"
+    networks:
+      - lambda_net
+    depends_on:
+      - postgres
+      - mongodb

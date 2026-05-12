@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────
+# Lambda Architecture — Configuration
+# ─────────────────────────────────────────────
+
+kafka:
+  broker: "kafka:9092"
+  topic: "crime_events"
+
+producer:
+  csv_path: "/data/crimes.csv"
+  delay_seconds: 1.0        # 1 row per second (simulated real-time)
+  batch_size: 1              # messages per batch
+
+storm:
+  anomaly_threshold: 5       # crimes in a window to trigger alert
+  window_seconds: 300        # 5-minute sliding window
+
+postgresql:
+  host: "postgres"
+  port: 5432
+  database: "crime_db"
+  user: "admin"
+  password: "admin"
+
+mongodb:
+  host: "mongodb"
+  port: 27017
+  database: "crime_db"

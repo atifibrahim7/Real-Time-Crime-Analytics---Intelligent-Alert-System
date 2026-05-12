@@ -1,0 +1,33 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Data (downloaded via data_download.sh)
+data/*.csv
+data/cleaned/
+
+# Docker runtime copies (generated inside containers)
+app/data/
+app/config/
+app/producer.py
+app/topology.py
+app/storm/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# JDBC driver
+*.jar

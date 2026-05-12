@@ -1,0 +1,20 @@
+# Root requirements.txt — All Python dependencies
+# =================================================
+# Install with: pip install -r requirements.txt
+
+# Kafka
+kafka-python==2.0.2
+
+# Configuration
+PyYAML==6.0.1
+
+# PostgreSQL
+psycopg2-binary==2.9.9
+
+# MongoDB
+pymongo==4.7.3
+
+# Dashboard (optional)
+streamlit>=1.30.0
+plotly>=5.18.0
+pandas>=2.0.0

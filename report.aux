@@ -1,0 +1,102 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}System Design}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Lambda Architecture Overview}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces High-level Lambda Architecture for the Real-Time Crime Analytics system.}}{3}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:arch}{{1}{3}{High-level Lambda Architecture for the Real-Time Crime Analytics system}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Component Details}{3}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Batch Layer — Apache Spark}{3}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Speed Layer — Kafka + Storm Topology}{4}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Serving Layer — PostgreSQL and MongoDB}{4}{subsubsection.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Application Layer — Streamlit}{4}{subsubsection.2.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Infrastructure}{4}{subsection.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Docker Compose service inventory.}}{4}{table.caption.2}\protected@file@percent }
+\newlabel{tab:services}{{1}{4}{Docker Compose service inventory}{table.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Data Schema}{4}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Source Datasets}{4}{subsection.3.1}\protected@file@percent }
+\gdef \LT@i {\LT@entry 
+    {1}{136.88284pt}\LT@entry 
+    {1}{63.21504pt}\LT@entry 
+    {1}{205.16928pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Source dataset summary.}}{5}{table.caption.3}\protected@file@percent }
+\newlabel{tab:sources}{{2}{5}{Source dataset summary}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}PostgreSQL Serving Schema}{5}{subsection.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces PostgreSQL serving-layer tables.}}{5}{table.3}\protected@file@percent }
+\newlabel{tab:schema}{{3}{5}{PostgreSQL serving-layer tables}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Key Table Definitions}{6}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{speed\_layer\_alerts}{6}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{hotspots}{6}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Analytics Methodology}{6}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Batch Analytics Pipeline (Spark)}{6}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Data Preprocessing}{6}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Crime Trend Analysis (§7.1)}{6}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Arrest Rate Analysis (§7.2)}{6}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}Violence and Gunshot Analysis (§7.3)}{6}{subsubsection.4.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5}Sex Offender Proximity Analysis (§7.4)}{7}{subsubsection.4.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.6}Cross-Dataset Correlation (§7.6)}{7}{subsubsection.4.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Speed Layer — Storm Topology}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Storm topology bolt responsibilities.}}{7}{table.caption.4}\protected@file@percent }
+\newlabel{tab:bolts}{{4}{7}{Storm topology bolt responsibilities}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Machine Learning Approach}{7}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Objective}{7}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Algorithm: KMeans Clustering}{7}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Implementation Workflow}{8}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Rationale for KMeans}{8}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{8}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Crime Temporal Patterns}{8}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Crimes by Hour of Day}{8}{subsubsection.6.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Crime volume peaks at midnight (hour 0: 2{,}897), 15:00–16:00 (2{,}863), and 12:00 (2{,}784). The lowest activity is at 05:00 (904 crimes).}}{8}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:hour}{{2}{8}{Crime volume peaks at midnight (hour 0: 2{,}897), 15:00–16:00 (2{,}863), and 12:00 (2{,}784). The lowest activity is at 05:00 (904 crimes)}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Crimes by Day of Week}{9}{subsubsection.6.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Friday records the highest crime volume (7{,}577), with Monday the lowest (6{,}589). The mid-week through weekend trend suggests increased activity as the week progresses.}}{9}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:dow}{{3}{9}{Friday records the highest crime volume (7{,}577), with Monday the lowest (6{,}589). The mid-week through weekend trend suggests increased activity as the week progresses}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Arrest Rate Analysis}{9}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Top-10 crime types by arrest rate (minimum 10 incidents).}}{9}{table.caption.7}\protected@file@percent }
+\newlabel{tab:arrest}{{5}{9}{Top-10 crime types by arrest rate (minimum 10 incidents)}{table.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Horizontal bar chart of arrest rates. Concealed carry and narcotics-class offences have the highest rates; homicide (18.2\%) and battery (16.4\%) are notably low despite high counts.}}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:arrestrate}{{4}{9}{Horizontal bar chart of arrest rates. Concealed carry and narcotics-class offences have the highest rates; homicide (18.2\%) and battery (16.4\%) are notably low despite high counts}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Arrests by Race}{10}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Total arrests stratified by arrestee race.}}{10}{table.caption.9}\protected@file@percent }
+\newlabel{tab:race}{{6}{10}{Total arrests stratified by arrestee race}{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Violence and Gunshot Analysis}{10}{subsection.6.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Violence incident types (total 10{,}000 records).}}{10}{table.caption.10}\protected@file@percent }
+\newlabel{tab:violence}{{7}{10}{Violence incident types (total 10{,}000 records)}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gunshot Injury Rate:}{10}{table.caption.10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Top-5 districts by gunshot injury proportion.}}{10}{table.caption.11}\protected@file@percent }
+\newlabel{tab:gunshot}{{8}{10}{Top-5 districts by gunshot injury proportion}{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}ML Results — Crime Hotspots (KMeans)}{11}{subsection.6.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces KMeans cluster centroids ($k=10$), sorted by crime density.}}{11}{table.caption.12}\protected@file@percent }
+\newlabel{tab:hotspots}{{9}{11}{KMeans cluster centroids ($k=10$), sorted by crime density}{table.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Scatter plot of cluster centroids. Marker size is proportional to crime count assigned to the cluster. The central-eastern corridor (longitude $-87.62$ to $-87.68$) concentrates the highest-density hotspots.}}{11}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:hotspot_scatter}{{5}{11}{Scatter plot of cluster centroids. Marker size is proportional to crime count assigned to the cluster. The central-eastern corridor (longitude $-87.62$ to $-87.68$) concentrates the highest-density hotspots}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Sex Offender Density by District}{12}{subsection.6.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Top-10 police districts by registered sex offender count.}}{12}{table.caption.14}\protected@file@percent }
+\newlabel{tab:offender}{{10}{12}{Top-10 police districts by registered sex offender count}{table.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Real-Time Speed Layer Alerts}{12}{subsection.6.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Alert severity distribution from the speed layer.}}{12}{table.caption.15}\protected@file@percent }
+\newlabel{tab:alerts}{{11}{12}{Alert severity distribution from the speed layer}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Cross-Dataset Correlation Summary}{12}{subsection.6.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces District-level arrest rate and violence rate correlation (top districts).}}{12}{table.caption.16}\protected@file@percent }
+\newlabel{tab:corr}{{12}{12}{District-level arrest rate and violence rate correlation (top districts)}{table.caption.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Challenges Faced}{13}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Data Heterogeneity and Schema Inconsistencies}{13}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{District Code Normalisation.}{13}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Missing Geospatial Data.}{13}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Null Handling Across Datasets.}{13}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Distributed System Coordination}{13}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Kafka-Zookeeper Dependency.}{13}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Storm Topology in Python.}{13}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Spark Performance and Configuration}{13}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Schema Inference vs.\ Explicit Schema.}{13}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{JDBC Write Bottleneck.}{13}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Driver Memory Pressure.}{13}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Database Dual-Write Consistency}{13}{subsection.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Simulation vs.\ Production Rate}{14}{subsection.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{14}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Technology Stack Reference}{14}{appendix.A}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Full technology stack with versions.}}{14}{table.caption.17}\protected@file@percent }
+\gdef \@abspage@last{15}
